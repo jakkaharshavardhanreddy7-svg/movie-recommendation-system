@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Movie Recommendation System</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            background:#0f172a;
+            color:white;
+            font-family:Arial;
+            text-align:center;
+        }
+
+        .container{
+            margin-top:100px;
+        }
+
+        h1{
+            color:#ef4444;
+            font-size:55px;
+            margin-bottom:40px;
+        }
+
+        input{
+            width:350px;
+            padding:15px;
+            border:none;
+            border-radius:10px;
+            background:#1e293b;
+            color:white;
+            font-size:16px;
+            outline:none;
+        }
+
+        button{
+            padding:15px 25px;
+            border:none;
+            border-radius:10px;
+            background:#ef4444;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            margin-left:10px;
+        }
+
+        .movies{
+            margin-top:50px;
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:20px;
+        }
+
+        .card{
+            width:250px;
+            background:#1e293b;
+            padding:20px;
+            border-radius:15px;
+        }
+
+        .card h2{
+            color:#ef4444;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎬 AI Movie Recommendation System</h1>
+
+        <form method="POST">
+
+            <input
+            type="text"
+            name="movie"
+            placeholder="Enter movie name..."
+            required>
+
+            <button type="submit">
+                Recommend
+            </button>
+
+        </form>
+
+        <div class="movies">
+
+            {% for movie in recommendations %}
+
+            <div class="card">
+
+                <h2>{{movie}}</h2>
+
+                <p>
+                    Recommended using AI similarity algorithm.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
